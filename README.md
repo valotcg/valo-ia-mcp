@@ -4,12 +4,20 @@
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-com.valotcg%2Fvalo--ia-blue)](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.valotcg/valo-ia)
 [![Glama](https://img.shields.io/badge/Glama-connector-green)](https://glama.ai/mcp/connectors/com.valotcg/valo-ia)
 
-Valo.IA is the hosted [MCP](https://modelcontextprotocol.io) server of [ValoTCG](https://valotcg.com)'s developer API. It gives an AI agent the card catalogue, dated prices and graded data that power the ValoTCG app, for Pokémon and 13 other trading card games (14 in total).
+**Ask your AI agent what any trading card is worth, and get a sourced, dated answer.** Valo.IA is the hosted [MCP](https://modelcontextprotocol.io) server behind [ValoTCG](https://valotcg.com): 540,000+ card references across 14 games, with the real European price (Cardmarket in EUR), the US market price, what the card actually sold for on eBay, graded sales and PSA populations, sealed products and 365 days of history. One line of config, one API key, and your agent prices a collection, a shop inventory or a single pull like a market analyst.
+
+**Games covered:** Pokémon · One Piece Card Game · Disney Lorcana · Yu-Gi-Oh! · Magic: The Gathering · Dragon Ball Super Card Game (Masters) · Dragon Ball Super Card Game Fusion World · Union Arena · Riftbound: League of Legends TCG · Cyberpunk Trading Card Game · Naruto Mythos TCG · Flesh and Blood · Gundam Card Game · Star Wars: Unlimited. Cards in English, French, Japanese and Chinese where the game prints them; the live coverage per source is at <https://valotcg.com/developers/coverage>.
+
+**Why agents like it**
+
+- Every price says where it comes from, in which currency and on which day. No blended figure, no silent conversion, and `status: "missing"` instead of a guess when a source has nothing.
+- Graded and raw in the same call: eBay medians for PSA 9 and PSA 10 over 30 and 90 days next to the raw price, plus PSA and CCC populations by grade, to decide whether a card is worth grading.
+- Ready-made answers: `price_summary` returns a recommended price with its reliability and recent change, `top_movers` and `top_priced` rank a whole set, `compare_prices` lines up ten cards side by side.
+- Built for tooling: 16 read-only, idempotent tools, credit metering in the response, errors never billed, free Sandbox key to try.
 
 - **Endpoint:** `https://api.valotcg.com/mcp` (Streamable HTTP, stateless, JSON responses)
 - **Registry name:** `com.valotcg/valo-ia`
 - **Auth:** `Authorization: Bearer <Valo.Data API key>` — `initialize` and `tools/list` work without a key; tool calls need one
-- **Data:** Cardmarket (EUR), US market (USD), eBay sales (EUR), graded eBay sales, PSA and CCC populations, sealed products, price history
 - **Docs:** <https://valotcg.com/developers/docs> · **Product page:** <https://valotcg.com/developers/ia>
 
 This repository holds the public metadata of the server (`server.json`), setup instructions and examples. The server itself runs on ValoTCG's infrastructure; nothing needs to be installed or built from here.
@@ -50,7 +58,7 @@ All 16 tools are read-only and idempotent. Each call is metered in Valo.Data cre
 
 | Tool | What it does |
 | --- | --- |
-| `list_games` | The 14 games, their card languages and per-source coverage. Free. |
+| `list_games` | The 14 games listed above, their card languages and per-source coverage. Free. |
 | `list_editions` | Sets and expansions of a game, searchable by name or set code. |
 | `search_cards` | Search cards by name (FR/EN), number, edition, language or rarity. |
 | `get_card` | One card sheet: name, number, rarity, image, Cardmarket and US market ids. |
