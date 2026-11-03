@@ -2,7 +2,7 @@
 
 [![mcptry](https://mcptry.com/badge/com.valotcg/valo-ia)](https://mcptry.com/servers/com.valotcg/valo-ia)
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-com.valotcg%2Fvalo--ia-blue)](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.valotcg/valo-ia)
-[![Glama](https://img.shields.io/badge/Glama-connector-green)](https://glama.ai/mcp/connectors/com.valotcg/valo-ia)
+[![Valo.IA (ValoTCG) MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/com.valotcg/valo-ia/badges/score.svg)](https://glama.ai/mcp/connectors/com.valotcg/valo-ia)
 
 **Ask your AI agent what any trading card is worth, and get a sourced, dated answer.** Valo.IA is the hosted [MCP](https://modelcontextprotocol.io) server behind [ValoTCG](https://valotcg.com): 540,000+ card references across 14 games, with the real European price (Cardmarket in EUR), the US market price, what the card actually sold for on eBay, graded sales and PSA populations, sealed products and 365 days of history. One line of config, one API key, and your agent prices a collection, a shop inventory or a single pull like a market analyst.
 
